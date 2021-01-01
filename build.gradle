@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.22'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+    compile group: 'commons-io', name: 'commons-io', version: '2.3'
+    compile group: 'xalan', name: 'xalan', version: '2.7.2'
+    compile group: 'org.apache.xbean', name: 'xbean-naming', version: '4.5'
+}
